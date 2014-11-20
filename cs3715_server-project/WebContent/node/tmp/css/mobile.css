@@ -1,0 +1,99 @@
+body{
+    background-color: #586261;
+    font-family: Arial, sans-serif;
+    font-size: 100%;
+    color: white;
+}
+a:link{
+    color: #d0a4dc;
+    text-decoration: none;
+}
+a:hover{
+    color: #d0f5e6;
+    text-decoration: underline;
+}
+a:visited{
+	color: #A3ccdc;
+}
+p{
+	font-size: 1.5em;
+}
+.headline{
+    background-color: #5a4361;
+    
+    font-weight: bold;
+    text-align: left;
+    padding-left: 1em;
+    border-radius: 10px;
+}
+.headline p{
+	font-size: 2em;
+}
+.container h1{
+    background-image: url(../img/St_John_Mountan_mobile.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    font-size: 4.5em;
+    margin: 0;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+.event, .article{
+    background-color: #205b66;
+	min-width: 48%;
+    max-width: 50%;
+    border-radius: 10px;
+    float:left;
+    padding: .3em;
+}
+.event  img{ /*Kept separate from .blog img just in case I choose to style them differently.*/
+    width: 75%;
+    max-width: 100px;
+}
+.blog, .comment{
+    background-color: #5a4361;
+	min-width: 48%;
+    max-width: 50%;
+    border-radius: 10px;
+    float:right;
+    padding: .3em;
+}
+
+.blog img, .comment img{
+    width: 75%;
+    max-width: 100px;
+}
+.navigation{
+	
+	font-size: 2em;
+}
+.navigation ul{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-align: center;
+}
+.navigation ul li {display:inline; min-width:60px;}
+
+.navigation ul li a
+{
+	padding: .2em 1em;
+	background-color: grey;
+}
+
+.navigation ul li a:hover
+{
+	background-color: #4A6143;
+}
+
+.comment{
+	margin-top: 1em;
+	min-width: 38%;
+	width: 40%;
+}
+
+.article{
+	margin-top: 1em;
+	min-width: 58%;
+	width: 60%;
+}

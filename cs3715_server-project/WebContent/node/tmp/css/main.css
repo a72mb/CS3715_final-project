@@ -1,0 +1,170 @@
+body{
+    background-color: #dddddd;
+}
+h1, h2, p{
+    font-family: Arial, DFKai-sb, sans-serif;
+    font-weight: bold;
+    text-align: left;
+}
+.headline{
+    background-image: url(../img/St_John_Mountan.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.headline .container {
+  position: relative;
+}
+.headline h1, p{
+    color: white;
+}
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    /*border: 3px red solid;   /*Test */
+}
+.container h1{
+    font-size: 100px;
+    padding-top: 50px;
+}
+.event{
+    float: left;
+    width: 55%;
+    background-color: white;
+    position: relative;
+    margin-top: 25px;
+    padding-top: 20px;
+    /*border: 3px blue solid;   /*Test */
+}
+.title{
+    border-bottom: 3px #eeeeee solid;
+    padding-left: 15px;
+    padding-right: 15px;
+    /*border: 3px green solid;  /* Test */
+}
+.horizontal{
+    margin-bottom: 0px;
+    /*border: 3px blue solid;   /*Test */
+}
+.event .horizontal{
+    height: 250px;
+}
+.entries{
+    width: 90%;
+    height: 250px;
+    padding: 0px 20px;	
+    margin-bottom: 0px;
+    border-bottom: .125em dashed #999999;
+    /*border: 3px green solid;  /* Test */
+}
+.pic{
+    float: left;
+    padding: 20px;
+    /*border: 3px red solid;  /* Test */
+}
+.pic img{
+    width: 100px;
+    /*border: 3px black solid;  /* Test */
+}
+.content{
+    width: 70%;
+    height: auto;
+    float: left;
+    padding-top: 0px;
+    padding-left: 25px;
+    /*border: 3px red solid;  /* Test */
+}
+.content p{
+    color: black;
+    padding-right: 25px;
+    padding-left: 25px;
+    /*border: 3px black solid;  /* Test */
+}
+.content h3{
+    /*border: 3px black solid;  /* Test */
+}
+.blog{
+    float: left;
+    width: 43%;
+    background-color: #aaaaaa;
+    margin-top: 25px;
+    margin-left: 25px;
+    padding-top: 20px;
+    /*border: 3px green solid;  /* Test */
+}
+.blogger{
+    float: left;
+    width: 500px;
+    padding-top: 20px;
+    /*border: 3px red solid;  /* Test */
+}
+.blogger img{
+    float: left;
+    width: 20%;
+    padding: 20px, 20px;
+    margin-right: 15px;
+    /*border: 3px black solid;  /* Test */
+}
+#footer{
+    clear:both; 
+    background-color:#2155A8;
+    min-height: 1.5em;
+    color: white;
+    font-weight: bold;
+    padding: .4em;
+    margin-top: 100px;  
+}
+#footer .email{
+    float:left;
+}
+#footer .email a{
+    font-style: italic;
+    color: #e8e8ff;
+    text-decoration: none;
+}
+#footer .email a:hover{
+    text-decoration:underline;
+    color: white;
+}
+#footer .copyright{
+    float:right;
+}
+
+/*Styles exclusive to articles*/
+#comments{
+    float:right;
+    width:35%;
+    padding: .4em;
+    background-color: #ffffff;
+}
+#posts{
+    float:left;
+    width: 63%;
+    padding: .4em;
+    background-color: #AAAAAA;
+}
+.left-posts{
+    float:left
+}
+.right-posts{
+    float:right;
+}
+#profiles{
+    float: left;
+    width: 63%;
+    padding: .4em;
+    background-color: #AAAAAA;
+}
+
+/*Maps*/
+.maps{
+	margin: 5px;
+	width: 200px;
+	height: 200px;
+	border: 1px solid black;
+	float: right;
+}

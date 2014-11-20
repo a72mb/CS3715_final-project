@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>World Article</title>
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/article.css" media="screen and (min-device-width:481px)">
+        <link rel="stylesheet" type="text/css" href="../css/mobile.css" media="screen and (max-device-width:480px)">
+        <script src="../js/comment.js"></script>
+        <script src="../js/json.js"></script>
+        <script src="../js/delete.js"></script>
+        <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<script src="../js/myLoc.js"></script>
+		
+    </head>
+    <body>
+        <div class="headline">
+            <div class="container">
+                <h1>iWatch Released</h1>
+                <p>Extract from: <a href="http://www.techradar.com/news/portable-devices/apple-iwatch-release-date-news-and-rumours-1131043#articleContent"><em>Apple Watch release date, news and features</em></a></p>
+            </div>
+            <div class="navigation">
+                <ul>
+                    <li><a href="main.html">Home</a></li>
+                    <li><a href="#">iWatch</a></li>
+                    <li><a href="Article_SocialResearch.html">Social</a></li>
+                    <li><a href="Article_Scottish.html">Scottish</a></li>
+                    <li><a href="Article_Syria_Iraq.html">Syria_Iraq</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="text">
+            <div class="article">
+                <div class="title"><h2>What does Apple Watch do?</h2></div>
+                <div class="content">
+                    <p>Apple's first wearable gadget beams messages, Facebook updates, simplified apps and Siri to our wrists, eliminating the all-too-common need to take out our devices to constantly check notifications.</p>
+                    <p>It's going to become especially convenient to pocket the 4.7-inch iPhone 6 and even bigger 5.5-inch iPhone 6 Plus in your jeans, or to always stow the next 9.7-inch iPad Air 2 in a bag.</p>
+                    <p>Other apps seen in the Apple Watch video include iMessages, Health, Calendar, Weather, Mail, Photos, Camera's shutter button, Passbook that now includes Apple Pay and even Apple Maps for navigation.</p>
+                    <p>The smartwatch also takes cues from the Nike FuelBand SE and other fitness trackers with health sensors and apps, a must for any serious wearable gadget these days.</p>
+                    <p>Sure there are fitness apps on your smartphone, but you're not always carrying your iPhone while tracking your steps and activity. The Apple Watch is better suited for your everyday workout.</p>
+                </div>
+                <div class="title"><h2>Design</h2></div>
+                <div class="content">
+                    <p>The final Apple Watch design isn't too far from the made-up renders that we've seen in recent weeks. It draws inspiration from iPod Nano with a rectangular-shaped screen plus one knob and a single button</p>
+                    <p>Apple Watch is more than iPod Nano meets the iPhone, though. The smartwatch display comes in two sizes measured by height: 38mm (1.5in) and 42mm (1.65in). Both are slightly smaller than the entire Pebble Steel watch height, which measures 46mm (1.8in).</p>
+                    <p>Apple Watch's screen is surrounded by casing made of custom alloys of stainless steel and aluminum that, according to the company, stands up physical demands of daily wear and another BendGate.</p>
+                    <p>Beyond the "Apple Watch" and "Apple Watch Sport" versions, a special "Apple Watch Edition" mixes in 18-karat yellow or rose gold for a premium look. It goes well with that gold iPhone 5S for sure.</p>
+                    <p>That brings the metal colors to six: stainless steel, silver aluminum, space black stainless steel, space gray aluminum, 18-karat yellow gold and 18-karat rose gold.</p>
+                </div>
+            </div>
+            <div class="comment">
+                <div class="title"><h2>Comment</h2></div>
+                <div id="added">
+                    <form>  
+                        <p>
+                            identity: 
+                            <select id="identity">
+                                <option value="blogger1">Blogger1</option>
+                                <option value="blogger2">Blogger2</option>
+                                <option value="vistor">Vistor</option>
+                            </select>
+                        </p>
+                        <p>Name:</br><input id="vistorName" type ="text" name = "fullname"></p>
+                        <p>Comment: <textarea id="newComment" name="comment" rows="8" cols="50"></textarea></p>
+                        <input type="button" id="submit" value="Submit" onclick="addComment();">
+                    </form>
+                </div>
+                <div class="blogger" id="listComment">
+                </div>
+            </div>
+        </div>
+        <div id="deletedItems">
+        	<h2>Deleted Items</h2>
+        </div>
+    </body>
+</html>
