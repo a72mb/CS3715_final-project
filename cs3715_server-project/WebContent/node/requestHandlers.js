@@ -1,5 +1,7 @@
 var querystring = require("querystring"),
-    fs = require("fs");
+var fs = require("fs");
+
+// Shows the textarea as the first web page
 function start(response) {
     console.log("Request handler 'start' was called.");
     var body = '<html>'+
@@ -18,6 +20,8 @@ function start(response) {
     response.write(body);
     response.end();
 }
+
+// Shows tha data from postData on the webpage
 function upload(response, postData) {
     console.log("Request handler 'upload' was called.");
     response.writeHead(200, {"Content-Type": "text/plain"});
