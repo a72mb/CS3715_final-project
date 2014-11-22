@@ -1,5 +1,5 @@
 var querystring = require("querystring"),
-var fs = require("fs");
+fs = require("fs");
 
 // Shows the textarea as the first web page
 function start(response) {
