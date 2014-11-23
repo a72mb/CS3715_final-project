@@ -21,6 +21,4 @@ function start(route, handle) {
     console.log("Server has started.");
 }
 
-/* This module allows users to export nodes and then import it into another Drupal installation, or on the same site. */
-
 exports.start = start;
