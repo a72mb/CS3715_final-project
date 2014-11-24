@@ -1,5 +1,5 @@
 var querystring = require("querystring"),
-var fs = require("fs");
+fs = require("fs");
 
 // Shows the textarea as the first web page
 function start(response) {
@@ -41,6 +41,12 @@ function show(response, postData) {
         response.end();
         }
     });
+    
+    /**This is the code to write to a file. It doesn't go here, but I need to figure out where to put it :)*/
+    //fs.appendFile('message.txt', 'data to append', function (err) {
+    //	  if (err) throw err;
+    //	  console.log('The "data to append" was appended to file!');
+    //});
 }
 exports.start = start;
 exports.upload = upload;
