@@ -1,4 +1,4 @@
-var server = require("./server");
+var server = require("./server2");
 var router = require("./router");
 var requestHandlers = require("./requestHandlers");
 
