@@ -6,7 +6,7 @@ filesys = require("fs");
 my_http.createServer(function(request,response){
 	var my_path = url.parse(request.url).pathname;
 	var full_path = path.join(process.cwd(),my_path);
-	path.exists(full_path,function(exists){
+	filesys.exists(full_path,function(exists){
 		if(!exists){
 			response.writeHeader(404, {"Content-Type": "text/plain"});  
 			response.write("404 Not Found\n");  
