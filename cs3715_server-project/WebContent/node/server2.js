@@ -4,6 +4,12 @@ var path = require("path");
 var url = require("url");
 var filesys = require("fs");
 
+/* 
+	start: 					export function
+	onRequest: 			request for create server
+	fileCtrl:				check the file exist or not by full path name
+	fileException:	log the error message
+*/
 function start(route, handle){
 	function onRequest(request, response){
 		function fileCtrl(exists){
