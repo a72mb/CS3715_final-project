@@ -2,13 +2,13 @@ window.onload = init;
 var pathArray = this.location.pathname.split( '/' );
 var callingPage = pathArray[pathArray.length-1];console.log(callingPage);
 var entries=null;
-var url = "http://www.pcglabs.mun.ca/~a72mb/CS3715/mb/request/posts.json";
+var url = "/tmp/request/posts.json";
 function init() {
 	getEntries();
 }
 
 function getEntries() {
-	//var url = "http://www.pcglabs.mun.ca/~a72mb/CS3715/mb/request/posts.json";
+	// XMLHttpRequest object: retrieve data from URL without having to do full page refresh
 	var request = new XMLHttpRequest();
 	request.open("GET", url);
 	request.onload = function() {
