@@ -1,6 +1,9 @@
 /* myLoc.js */
+window.init = getMyLocation();
 var map=null;
 var targetDiv="";
+var currentLatitude;
+var currentLongitude;
 var blogger1Coords =  {
 	latitude: 47.571946,
 	longitude: -52.734753
@@ -10,6 +13,9 @@ var blogger2Coords =  {
 	longitude: -52.731863
 };
 
+function getCurrentLocation(){
+    return { latitude: currentLatitude, longitude: currentLongitude};
+}
 function getMyLocation(target) {
 	targetDiv=target;
 	if (navigator.geolocation) {
@@ -21,11 +27,13 @@ function getMyLocation(target) {
 }
 
 function displayLocation(position) {
-	var latitude = position.coords.latitude;
-	var longitude = position.coords.longitude;
+	currentLatitude = position.coords.latitude;
+	currentLongitude = position.coords.longitude;
 
-	var div = document.getElementById("location");
-	div.innerHTML = "You are at Latitude: " + latitude + ", Longitude: " + longitude;
+	// var div = document.getElementById("location");
+	// div.innerHTML = "You are at Latitude: " + currentLatitude + ", Longitude: " + currentLongitude;
+	// console.log(position.coords+"   " +targetDiv);
+	// print(position.coords + "    " +targetDiv);
 	showMap(position.coords,targetDiv);
 }
 
