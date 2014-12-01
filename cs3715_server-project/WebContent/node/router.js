@@ -1,7 +1,9 @@
 function route(handle, pathname, response, postData, full_path) {
   console.log("About to route a request for " + pathname);
-  if(typeof handle[pathname]==='function'){
-    handle[pathname](response, postData);
+  var newpath=pathname.substring(0, 4); //Gets stuff in the /tmp/ directory; would also work for /sta, /upl, or /sho
+
+  if(typeof handle[newpath]==='function'){
+    handle[newpath](response, postData, full_path);
   }
   else{
     console.log("No request handler found for " + pathname);

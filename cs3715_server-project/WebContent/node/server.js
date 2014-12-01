@@ -9,7 +9,6 @@ function start(route, handle) {
         console.log("Request for " + pathname + " received.");
         
         var full_path = path.join(process.cwd(),pathname);
-        //console.log("FULL PATH "+full_path);
         
         request.setEncoding("utf8");
         request.addListener("data", function(postDataChunk) {
@@ -22,7 +21,7 @@ function start(route, handle) {
         });
     }
     http.createServer(onRequest).listen(8888);
-    console.log("Server has started.");
+    console.log("Server has started on port 8888.");
 }
 
 exports.start = start;
