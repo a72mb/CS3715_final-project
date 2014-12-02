@@ -1,18 +1,31 @@
-window.onload = init;
+window.onload = getEntries;
 var pathArray = this.location.pathname.split( '/' );
-var callingPage = pathArray[pathArray.length-1];console.log(callingPage);
+var callingPage = pathArray[pathArray.length-1];
 var entries=null;
-var url = "http://www.pcglabs.mun.ca/~a72mb/CS3715/mb/request/posts.json";
-function init() {
-	getEntries();
-}
+// url is the path to access json file
+var url = "/tmp/request/posts.json";
+// build up the dictionary for searching 
+var id = {
+	"Blogger1": ["blogger1", "entry1"],
+	"Blogger2": ["blogger2", "entry2"]
+};
+var title = {
+	"withData.html": ["iWatch"],
+	"Article_iWatch.html": ["iWatch"],
+	"Article_Scottish.html" : ["scottish"],
+	"Article_SocialResearch.html" : ["social"],
+	"Article_Syria_Iraq.html" : ["syria"]
+};
 
 function getEntries() {
-	//var url = "http://www.pcglabs.mun.ca/~a72mb/CS3715/mb/request/posts.json";
+	// XMLHttpRequest object: retrieve data from URL without having to do full page refresh
 	var request = new XMLHttpRequest();
+	// for open method: GET, POST, PUT, DELETE
 	request.open("GET", url);
+	// status == 200 for successful request
 	request.onload = function() {
 		if (request.status == 200) {
+			// request.responseText will be the context of the posts.json
 			updateEntries(request.responseText);
 		}
 	};
@@ -22,27 +35,9 @@ function getEntries() {
 function updateEntries(responseText) {
 	var entriesDiv = document.getElementById("listComment");
 	var deletedDiv = document.getElementById("deletedItems");
+	// JSON.parse, convert the string into a JavaScript object
 	entries = JSON.parse(responseText);
-	var article = "";
-	switch(callingPage) {
-	    case "withData.html":
-	        article="iWatch";
-	        break;
-	    case "Article_iWatch.html":
-	    	article="iWatch";
-	        break;
-	    case "Article_Scottish.html":
-	    	article="scottish";
-	        break;
-	    case "Article_SocialResearch.html":
-	    	article="social";
-	        break;
-	    case "Article_Syria_Iraq.html":
-	    	article="syria";
-	        break;
-	    default:
-	    	article="";
-	}
+	var article = title[callingPage];
 	
 	for (var i = 0; i < entries.length; i++) {
 		var photo="";
@@ -50,21 +45,17 @@ function updateEntries(responseText) {
 		var entry = entries[i];
 		var div = document.createElement("div");
 		if(entry.article == article){
-			if(entry.identity=="Blogger1"){
-				div.setAttribute("class", "entry1");
-				photo="blogger1";
-				mapId="map1"+i;
-			}
-			else if(entry.identity=="Blogger2"){
-				div.setAttribute("class", "entry2");
-				photo="blogger2";
-				mapId="map2"+i;
+			// Setting the value for each case
+			if(entry.identity in id){
+				div.setAttribute("class", id[entry.identity][1])
+				photo = id[entry.identity][0]
 			}
 			else{
 				div.setAttribute("class", "guest");
 				photo="guest";
-				mapId="mapg"+i;
 			}
+			mapId="map1"+i;
+
             div.setAttribute("id",entry.id);
 			div.innerHTML += '<div class="photo"><a href="../img/'+photo+'.png"><img src="../img/'+photo+'.png" title="'+photo+'" alt="'+photo+'"></a></div>';
 			div.innerHTML += '<div class="content"><h3>'+entry.name+'</h3><p>'+entry.comment+'</p></div>';
@@ -81,10 +72,10 @@ function updateEntries(responseText) {
 		}
 	}
 }
-function changeDeleteFlag(id) {
+function changeDeleteFlag(identity) {
   for (var i = 0; i < entries.length; i++) {
     var entry = entries[i];
-    if(entry.id == id){
+    if(entry.id == identity){
         entry.deleted="1";
     }
   }

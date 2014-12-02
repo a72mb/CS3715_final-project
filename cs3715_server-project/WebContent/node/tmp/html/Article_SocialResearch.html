@@ -50,6 +50,25 @@
             </div>
             <div class="comment">
                 <div class="title"><h2>Comment</h2></div>
+                <div id="added">
+                    <form action="" method="POST">  
+                        <p>
+                            identity: 
+                            <select id="identity" name="identity">
+                                <option value="blogger1">Blogger1</option>
+                                <option value="blogger2">Blogger2</option>
+                                <option value="visitor">Visitor</option>
+                            </select>
+                        </p>
+                        <p>Name:<br /><input id="visitorName" type ="text" name = "fullname"></p>
+                        <p>Comment: <textarea id="newComment" name="comment" rows="8" cols="50"></textarea></p>
+                        <input type="hidden" name="date" value="12\/02\/2014">
+                        <input type="hidden" name="article" value="social">
+                        <input type="hidden" name="location" value="">
+                        <input type="hidden" name="deleted" value="0">
+                        <input type="submit" id="submit" value="Submit" onclick="addComment();">
+                    </form>
+                </div>
                 <div class="blogger" id="listComment">
                     
                 </div>

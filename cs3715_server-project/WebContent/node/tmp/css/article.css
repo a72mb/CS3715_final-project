@@ -88,7 +88,7 @@ h1, h2, p, a{
     padding-left: 25px;
     padding-right: 25px;
 }
-.entry1 .entry2 .entryVistor{
+.entry1 .entry2 .entryVisitor{
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -98,7 +98,7 @@ h1, h2, p, a{
 .entry2{
     background-color: #FF7744;
 }
-.entryVistor{
+.entryVisitor{
     background-color: #DDDDDD;
 }
 .photo img{

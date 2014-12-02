@@ -1,6 +1,7 @@
 var querystring = require("querystring"),
 fs = require("fs");
-
+path = require("path");
+var url = require("url");
 // Shows the textarea as the first web page
 function start(response) {
     console.log("Request handler 'start' was called.");
@@ -40,14 +41,36 @@ function show(response, postData) {
         response.write(file, "utf-8");
         response.end();
         }
-    });
-    
-    /**This is the code to write to a file. It doesn't go here, but I need to figure out where to put it :)*/
-    //fs.appendFile('message.txt', 'data to append', function (err) {
-    //	  if (err) throw err;
-    //	  console.log('The "data to append" was appended to file!');
-    //});
+    }); 
 }
+function web(response, postData, filename){
+    var mimeTypes = {
+    "html": "text/html",
+    "jpeg": "image/jpeg",
+    "jpg": "image/jpeg",
+    "png": "image/png",
+    "js": "text/javascript",
+    "css": "text/css"};
+    
+    //console.log("Request handler 'web' was called.");
+    fs.exists(filename, function(exists) {
+        if(!exists) {
+            console.log("not exists: " + filename);
+            response.writeHead(404, {'Content-Type': 'text/plain'});
+            response.write('404 Not Found\n');
+            response.end();
+            return;
+        }
+        var mimeType = mimeTypes[path.extname(filename).split(".")[1]];
+        response.writeHead(200, {'Content-Type':mimeType});
+
+        var fileStream = fs.createReadStream(filename);
+        fileStream.pipe(response);
+
+    });/**/
+}
+
 exports.start = start;
 exports.upload = upload;
 exports.show = show;
+exports.web = web;
