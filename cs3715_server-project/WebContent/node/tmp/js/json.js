@@ -1,4 +1,4 @@
-window.onload = init;
+window.onload = getEntries;
 var pathArray = this.location.pathname.split( '/' );
 var callingPage = pathArray[pathArray.length-1];
 var entries=null;
@@ -16,10 +16,6 @@ var title = {
 	"Article_SocialResearch.html" : ["social"],
 	"Article_Syria_Iraq.html" : ["syria"]
 };
-
-function init() {
-	getEntries();
-}
 
 function getEntries() {
 	// XMLHttpRequest object: retrieve data from URL without having to do full page refresh

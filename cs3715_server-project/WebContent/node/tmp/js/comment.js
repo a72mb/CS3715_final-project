@@ -12,6 +12,7 @@ var title = {
     "Article_SocialResearch.html" : ["social"],
     "Article_Syria_Iraq.html" : ["syria"]
 };
+var appendJSON;
 
 function addComment(){
     var ID = document.getElementById("identity").value;
@@ -52,9 +53,9 @@ function getJSONDate(){
     var systemDate = new Date();
     return systemDate.getMonth()+"/"+ systemDate.getDate()+"/" + systemDate.getFullYear();
 }
-// Testing
 function setJSONFile(){
-    var txt = {
+    // Get a new JSON format data for appending into the posts.json
+    appendJSON = JSON.stringify({
         date: getJSONDate(),
         article: title[callingPage],
         identity: getName(document.getElementById("identity").value,1),
@@ -62,9 +63,23 @@ function setJSONFile(){
         comment: document.getElementById("newComment").value,
         location: getCurrentLocation(),
         deleted : 0
+    });
+
+    var url = "/tmp/request/posts.json";
+    var request = new XMLHttpRequest();
+    request.open("GET", url);
+    request.onload = function() {
+        if (request.status == 200) {
+            // request.responseText will be the context of the posts.json
+            storeJSON(request.responseText);
+        }
     };
-    // parse json > re-write > store
-    
-    console.log(txt);
-    // console.log(JSON.parse(txt));
+    request.send(null);
+}
+function storeJSON(responseText){
+    var originalJSON = JSON.parse(responseText) + appendJSON;
+    var url = "/tmp/request/posts.json";
+    var request = new XMLHttpRequest();
+    request.open("GET", url);
+    request.send(originalJSON);
 }
